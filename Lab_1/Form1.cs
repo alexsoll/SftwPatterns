@@ -43,8 +43,10 @@ namespace lab1
 
             ICurve curve = new Line(a, b);
 
-            Visual.VisualCurve visualCurve = new Visual.VisualLine(curve);
-            visualCurve.Draw(this);
+            Visual.Intermittent decorator = new Visual.Intermittent(this);
+
+            Visual.VisualCurve visualCurve = new Visual.VisualCurve(curve);
+            visualCurve.Draw(decorator);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,7 +69,7 @@ namespace lab1
 
             ICurve curve = new Bezier(a, b, c, d);
 
-            Visual.VisualCurve visualCurve = new Visual.VisualBezier(curve);
+            Visual.VisualCurve visualCurve = new Visual.VisualCurve(curve);
             visualCurve.Draw(this);
         }
 
